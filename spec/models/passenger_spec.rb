@@ -21,5 +21,11 @@
 require 'rails_helper'
 
 RSpec.describe Passenger, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  let(:passenger) { FactoryGirl.build :passenger }
+  subject { passenger }
+
+  it { is_expected.respond_to?(:name) }
+  it { is_expected.respond_to?(:email) }
+
+  it { is_expected.to have_and_belong_to_many(:routes) }
 end
