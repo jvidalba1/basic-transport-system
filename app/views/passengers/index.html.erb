@@ -1,0 +1,39 @@
+<div class="row">
+  <div class="col-md-12">
+    <h1><%= current_passenger.name %></h1>
+    <h6><%= current_passenger.email %></h6>
+    
+    <% if @routes.empty? %>
+      <h3>There are no routes</h3>
+    <% else %>
+      <span>
+        <h3>Routes list</h3>      
+      </span>
+
+      <table class="table table-striped">
+        <thead>
+          <tr>
+            <th>#id</th>
+            <th>Date</th>
+            <th>License Plate Vehicle</th>
+            <th>Category Vehicle</th>
+            <th>Color</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% @routes.each do |route| %>
+            <tr>
+              <td><%= route.id %></td>
+              <td><%= route.date %></td>
+              <td><%= route.vehicle.license_plate %></td>
+              <td><%= route.vehicle.category %></td>
+              <td><%= route.color %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+    <% end %>
+  </div>
+</div>
+
+
