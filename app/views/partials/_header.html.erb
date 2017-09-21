@@ -5,5 +5,15 @@
         <p>Basic Transport System</p>
       </a>
     </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+          <% if current_passenger %>
+            <%= link_to "Sign out", destroy_passenger_session_url, method: :delete %>
+          <% end %>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>
