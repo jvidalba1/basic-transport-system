@@ -25,12 +25,14 @@ class Vehicle < ApplicationRecord
   before_validation :set_category
 
   def set_category
-    if license_plate.slice(0,3) == "ABC"
-      self.category = "category_1"
-    elsif license_plate.slice(0,3) == "DFG"
-      self.category = "category_2"
-    else
-      errors.add(:license_plate, "does not comply with our policies")
+    if license_plate
+      if license_plate.slice(0,3) == "ABC"
+        self.category = "category_1"
+      elsif license_plate.slice(0,3) == "DFG"
+        self.category = "category_2"
+      else
+        errors.add(:license_plate, "does not comply with our policies")
+      end
     end
   end
 end
