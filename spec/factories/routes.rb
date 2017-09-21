@@ -9,7 +9,9 @@
 #  updated_at :datetime         not null
 #
 
-class Route < ApplicationRecord
-  belongs_to :vehicle
-  has_and_belongs_to_many :passengers
+FactoryGirl.define do
+  factory :route do
+    vehicle nil
+    date "2017-09-20"
+  end
 end

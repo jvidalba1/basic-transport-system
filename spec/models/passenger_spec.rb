@@ -1,15 +1,15 @@
 # == Schema Information
 #
-# Table name: routes
+# Table name: passengers
 #
 #  id         :integer          not null, primary key
-#  vehicle_id :integer
-#  date       :date
+#  name       :string
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #
 
-class Route < ApplicationRecord
-  belongs_to :vehicle
-  has_and_belongs_to_many :passengers
+require 'rails_helper'
+
+RSpec.describe Passenger, type: :model do
+  pending "add some examples to (or delete) #{__FILE__}"
 end

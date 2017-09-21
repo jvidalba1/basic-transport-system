@@ -1,7 +1,6 @@
 class CreateRoutes < ActiveRecord::Migration[5.1]
   def change
     create_table :routes do |t|
-      t.references :passenger, foreign_key: true
       t.references :vehicle, foreign_key: true
       t.date :date
 

@@ -11,6 +11,11 @@
 #  updated_at    :datetime         not null
 #
 
-class Vehicle < ApplicationRecord
-  has_many :routes, dependent: :destroy
+FactoryGirl.define do
+  factory :vehicle do
+    license_plate "MyString"
+    category "MyString"
+    color "MyString"
+    year 1
+  end
 end
