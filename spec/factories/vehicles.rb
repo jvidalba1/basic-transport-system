@@ -13,9 +13,9 @@
 
 FactoryGirl.define do
   factory :vehicle do
-    license_plate "MyString"
-    category "MyString"
-    color "MyString"
-    year 1
+    sequence(:license_plate) { |n| "ABC#{n}#{n}#{n}" }
+    category "category_1"
+    color "Blanco"
+    year 2010
   end
 end
