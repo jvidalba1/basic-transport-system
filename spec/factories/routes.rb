@@ -11,7 +11,7 @@
 
 FactoryGirl.define do
   factory :route do
-    vehicle nil
-    date "2017-09-20"
+    vehicle
+    date FFaker::Time.date
   end
 end

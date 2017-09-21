@@ -20,6 +20,8 @@
 
 FactoryGirl.define do
   factory :passenger do
-    name "MyString"
+    email { FFaker::Internet.email }
+    password "password"
+    password_confirmation "password"
   end
 end
